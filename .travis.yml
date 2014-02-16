@@ -8,5 +8,5 @@ node_js:
 services:
   - mongodb
 before_script:
-  - npm install -g grunt-cli
+  - npm install
 script: grunt test
