@@ -1,6 +1,7 @@
 env:
   - REPO="krishnan-mani/asb"
-  - CI_HOME=`pwd`/$REPO
+  - MY_CODEBASE="web"
+  - CI_HOME=`pwd`/$REPO/$MY_CODEBASE
   - NODE_ENV=travis
 language: node_js
 node_js:
