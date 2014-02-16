@@ -1,13 +1,12 @@
 env:
-  - REPO="krishnan-mani/asb"
-  - MY_CODEBASE="web"
-  - CI_HOME=`pwd`/$REPO/$MY_CODEBASE
-  - NODE_ENV=travis
+  global:
+    - MY_CODEBASE="web"
 language: node_js
 node_js:
   - "0.10"
 services:
   - mongodb
 before_script:
+  - cd $MY_CODEBASE
   - npm install
 script: grunt test
