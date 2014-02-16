@@ -34,11 +34,11 @@ describe('<Unit Test>', function() {
                 });
             });
 
-            it('should be able to save whithout problems', function(done) {
+            it('should save whithout problems', function(done) {
                 user.save(done);
             });
 
-            it('should fail to save an existing user again', function(done) {
+            it('should fail to save as an existing user', function(done) {
                 user.save();
                 return user2.save(function(err) {
                     should.exist(err);
@@ -46,7 +46,7 @@ describe('<Unit Test>', function() {
                 });
             });
 
-            it('should show an error when try to save without name', function(done) {
+            it('should show an error when attempting to save without name', function(done) {
                 user.name = '';
                 return user.save(function(err) {
                     should.exist(err);

@@ -3,23 +3,19 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var NeedSchema = new Schema({
-    souls: {
-        type: Number
-    },
-    at: {
-        type: Schema.ObjectId,
-        ref: 'Location',
+var LocationSchema = new Schema({
+    name: {
+        type: String,
         required: true
     },
-    need: {
+    addressLineOne: {
         type: String,
-        default: '',
-        trim: true
+        required: true
     },
-    when: {
-        type: Date,
-        default: Date.now
+    addressLineTwo: String,
+    city: {
+        type: String,
+        required: true
     },
     created: {
         type: Date,
@@ -31,4 +27,4 @@ var NeedSchema = new Schema({
     }
 });
 
-mongoose.model('Need', NeedSchema);
+mongoose.model('Location', LocationSchema);
